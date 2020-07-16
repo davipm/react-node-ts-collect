@@ -6,6 +6,9 @@ export default createGlobalStyle`
     --title-color: #322153;
     --text-color: #6C6C80;
     --main-bg-color: #F0F0F5;
+    --placeholder-color: #a0a0b2;
+    --dopzone-bg-color: #e1faec;
+    --dopzone-border-color: #4ecb79;
     
     --main-font-family: 'Poppins', sans-serif;
   }
@@ -26,11 +29,17 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
   
-  body, input, select, textarea, button {
+  body, 
+  input, 
+  select, 
+  textarea, 
+  button {
     font-family: var(--main-font-family);
   }
   
-  input, select, textarea {
+  input, 
+  select, 
+  textarea {
     width: 100%;
     font-size: 1rem;
     text-align: left;
@@ -39,7 +48,12 @@ export default createGlobalStyle`
     transition: all .15s ease-in-out;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
     color: var(--title-color);
     font-family: var(--main-font-family);
   }
