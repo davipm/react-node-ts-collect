@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components/macro";
 
+interface ListItemProps {
+  selected: boolean;
+}
+
 export const Container = styled.section`
   width: 100%;
   max-width: 1200px;
@@ -34,6 +38,13 @@ export const Container = styled.section`
     max-width: 730px;
     background-color: #fff;
     border-radius: 8px;
+
+    .leaflet-container {
+      width: 100%;
+      height: 350px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
 
     h1 {
       font-size: 36px;
@@ -140,7 +151,7 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const ListItem = styled.li<{ selected?: boolean }>`
+export const ListItem = styled.li<ListItemProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
