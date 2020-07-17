@@ -37,6 +37,10 @@ export default createGlobalStyle`
     font-family: var(--main-font-family);
   }
   
+  button {
+    outline: 0;
+  }
+  
   input, 
   select, 
   textarea {

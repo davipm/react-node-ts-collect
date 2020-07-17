@@ -83,7 +83,8 @@ function CreatePoint() {
 
   useEffect(() => {
     if (selectedUf === "0") return;
-    (async function loadMunicipios() {
+
+    (async function loadCities() {
       try {
         const response = await axios.get(
           `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`
