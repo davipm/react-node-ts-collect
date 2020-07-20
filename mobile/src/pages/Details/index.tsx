@@ -73,7 +73,7 @@ function Details() {
     });
   }
 
-  if (!data.point) return;
+  if (!data.point) return null;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
