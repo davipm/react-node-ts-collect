@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import MapView, { Marker } from "react-native-maps";
 import Constants from "expo-constants";
 
@@ -55,12 +55,48 @@ export const MapMarkerContainer = styled.View`
   background-color: #34cb79;
 `;
 
-export const MapMarkerImage = styled.Image``;
+export const MapMarkerImage = styled.Image.attrs({
+  resizeMode: "cover",
+})`
+  width: 90px;
+  height: 45px;
+`;
 
-export const MapMarkerTitle = styled.Text``;
+export const MapMarkerTitle = styled.Text`
+  flex: 1;
+  font-family: "Poppins_400Regular";
+  font-size: 13px;
+  line-height: 23px;
+  color: #fff;
+`;
 
-export const ItemContainer = styled.View``;
+export const ItemContainer = styled.View`
+  flex-direction: row;
+  margin-top: 16px;
+  margin-bottom: 32px;
+`;
 
-export const Item = styled.TouchableOpacity<Selected>``;
+export const Item = styled.TouchableOpacity<Selected>`
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin-right: 8px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  border: 2px solid #eee;
+  border-radius: 8px;
 
-export const ItemTitle = styled.Text``;
+  ${({ isSelected }) =>
+    isSelected &&
+    css`
+      border-color: #34cb79;
+    `}
+`;
+
+export const ItemTitle = styled.Text`
+  font-size: 13px;
+  text-align: center;
+  font-family: "Poppins_400Regular";
+`;

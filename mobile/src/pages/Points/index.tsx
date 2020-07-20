@@ -74,10 +74,54 @@ function Points() {
     })();
   }, []);
 
+  useEffect(() => {
+    api
+      .get("/items")
+      .then((response) => {
+        setItems(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    api
+      .get("/points", {
+        params: {
+          city: routeParams.city,
+          uf: routeParams.uf,
+          items: selectedItem,
+        },
+      })
+      .then((response) => {
+        setPoints(response.data);
+      });
+  }, [selectedItem]);
+
+  function handleNavigateBack() {
+    navigation.goBack();
+  }
+
+  function handleNavigateDetails(id: number) {
+    navigation.navigate("Details", { point_id: id });
+  }
+
+  function handleSelectedItem(id: number) {
+    const alreadySelected = selectedItem.findIndex((item) => item === id);
+
+    if (alreadySelected >= 0) {
+      const filteredItems = selectedItem.filter((item) => item! == id);
+      setSelectedItem(filteredItems);
+    } else {
+      setSelectedItem([...selectedItem, id]);
+    }
+  }
+
   return (
     <>
       <Container>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
 
@@ -96,6 +140,8 @@ function Points() {
             >
               {points.map((point: Point) => (
                 <MapMarker
+                  key={String(point.id)}
+                  onPress={() => handleNavigateDetails(point.id)}
                   coordinate={{
                     latitude: point.latitude,
                     longitude: point.longitude,
@@ -121,6 +167,7 @@ function Points() {
             <Item
               key={String(item.id)}
               isSelected={selectedItem.includes(item.id)}
+              onPress={() => handleSelectedItem(item.id)}
             >
               <SvgUri width={42} height={42} uri={item.image_url} />
               <ItemTitle>{item.title}</ItemTitle>
