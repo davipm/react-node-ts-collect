@@ -157,6 +157,7 @@ function Points() {
           )}
         </MapContainer>
       </Container>
+
       <ItemContainer>
         <ScrollView
           horizontal
