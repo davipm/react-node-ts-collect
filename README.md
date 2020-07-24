@@ -1,6 +1,6 @@
-# Project Title
+# NLW Project
 
-One Paragraph of project description goes here
+App to save points to recicle things
 
 ## Getting Started
 
