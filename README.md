@@ -4,7 +4,7 @@ App to save points to recicle things
 
 ### Prerequisites
 
-Node.js
+Node.js and Expo.io
 
 
 ### Installing
@@ -12,6 +12,14 @@ Node.js
 ```
 npm i
 ```
+
+## Built With
+
+* React
+* React Native
+* Styled Components
+* Node
+* RestAPI
 
 ## Authors
 
