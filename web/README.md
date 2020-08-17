@@ -1,4 +1,4 @@
-# NLW Web
+# Web
 
 Web Application with Rest API
 
@@ -20,6 +20,4 @@ npm i
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Davi Pereira**
