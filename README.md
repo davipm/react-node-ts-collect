@@ -1,5 +1,3 @@
-# NLW Project
-
 App to save points to recicle things
 
 ### Prerequisites
